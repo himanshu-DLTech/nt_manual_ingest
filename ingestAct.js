@@ -4,6 +4,9 @@
 const fs = require("fs");
 const path = require("path");
 const lawsStorage = require(path.join(__dirname, "./lawsStorageSimple.js"));
+const dotenv = require("dotenv");
+dotenv.config({path: path.join(__dirname, ".env")});
+
 
 // ─────────────────────────────────────────────
 // Args

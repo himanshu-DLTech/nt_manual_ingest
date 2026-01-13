@@ -4,6 +4,8 @@
 const fs = require("fs");
 const path = require("path");
 const { spawn } = require("child_process");
+const dotenv = require("dotenv");
+dotenv.config({path: path.join(__dirname, ".env")});
 
 const documentsDirectoryPath = process.argv[2];
 
