@@ -86,8 +86,8 @@ async function main() {
     if (!inputPath) {
         console.error("❌ Invalid arguments.");
         console.error("Usage:");
-        console.error("  node ocr-cli.js /path/to/file.pdf");
-        console.error("  node ocr-cli.js /path/to/directory");
+        console.error(`  node ${path.basename(__filename)} /path/to/file.pdf`);
+        console.error(`  node ${path.basename(__filename)} /path/to/directory`);
         process.exit(1);
     }
 

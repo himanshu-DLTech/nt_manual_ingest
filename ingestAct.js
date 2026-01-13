@@ -14,9 +14,9 @@ const isAll = flag === "--all";
 
 if (!inputDirPath) {
     console.log("❌ Invalid arguments.");
-    console.error("Usage: node ingestAct.js <Act Directory Path>");
+    console.error(`Usage: node ${path.basename(__filename)} <Act Directory Path>`);
     console.error("--- OR ---");
-    console.error("Usage: node ingestAct.js <masterDirPath having all Acts> --all");
+    console.error(`Usage: node ${path.basename(__filename)} <masterDirPath having all Acts> --all`);
     process.exit(1);
 }
 if(!process.env.DB_PATH) {

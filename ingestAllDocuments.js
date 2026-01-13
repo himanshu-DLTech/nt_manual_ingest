@@ -9,7 +9,7 @@ const documentsDirectoryPath = process.argv[2];
 
 if (!documentsDirectoryPath) {
     console.log("❌ Invalid arguments.");
-    console.error("Usage: node installAll.js <Documents Directory Path having Acts and Regulations>");
+    console.error(`Usage: node ${path.basename(__filename)} <Documents Directory Path having Acts and Regulations>`);
     process.exit(1);
 }
 if(!process.env.DB_PATH) {

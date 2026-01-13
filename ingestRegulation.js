@@ -14,9 +14,9 @@ const isAll = flag === "--all";
 
 if (!inputDirPath) {
     console.log("❌ Invalid arguments.");
-    console.error("Usage: node ingestRegulation.js <Regulation Directory Path>");
+    console.error(`Usage: node ${path.basename(__filename)} <Regulation Directory Path>`);
     console.error("--- OR ---");
-    console.error("Usage: node ingestRegulation.js <masterDirPath having all Regulations> --all");
+    console.error(`Usage: node ${path.basename(__filename)} <masterDirPath having all Regulations> --all`);
     process.exit(1);
 }
 if(!process.env.DB_PATH) {

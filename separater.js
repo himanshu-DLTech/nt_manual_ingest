@@ -26,7 +26,8 @@ async function main() {
     const dirPath = process.argv[2];
 
     if (!dirPath) {
-        console.error("Usage: node organize-pdfs.js <directory-path>");
+        console.error("❌ Invalid arguments.");
+        console.error(`Usage: node ${path.basename(__filename)} <directory-path>`);
         process.exit(1);
     }
 

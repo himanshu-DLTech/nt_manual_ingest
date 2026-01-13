@@ -23,10 +23,7 @@ const DPI = Number(process.env.DPI || conf.dpi);
 const SHARP = process.env.SHARP || conf.sharp;
 const MEDIAN = Number(process.env.MEDIAN || conf.median);
 const UNGAMMA = process.env.UNGAMMA || conf.ungamma;
-const MAX_RETRIES = conf.max_retries;
 const TARGET_WIDTH = Number(process.env.TARGET_WIDTH || conf.target_width);
-const RETRY_DELAY_MS = conf.retry_delay_ms;
-const MAX_FILE_SIZE_MB = conf.max_file_size;
 
 const CONCURRENCY_IMAGE_ENHANCEMENT =
     Number(process.env.CONCURRENCY_IMAGE_ENHANCEMENT || conf.concurrency_image_enhancement);

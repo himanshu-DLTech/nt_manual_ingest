@@ -41,9 +41,8 @@ async function main() {
     const inputDirs = process.argv.slice(2).map(d => path.resolve(d));
 
     if (inputDirs.length !== 5) {
-        console.error(
-            "Usage: node scan-pdfs.js <dir1> <dir2> <dir3> <dir4> <dir5>"
-        );
+        console.error("❌ Invalid arguments.");
+        console.error(`Usage: node ${path.basename(__filename)} <dir1> <dir2> <dir3> <dir4> <dir5>`);
         process.exit(1);
     }
 
