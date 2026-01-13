@@ -26,6 +26,7 @@ async function main() {
     const dirPath = process.argv[2];
 
     if (!dirPath) {
+        console.error("❌ Invalid arguments.");
         console.error("Usage: node move-pdfs-by-basename.js <directory-path>");
         process.exit(1);
     }

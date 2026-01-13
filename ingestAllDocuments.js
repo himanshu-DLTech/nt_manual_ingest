@@ -1,8 +1,8 @@
 // installAll.js
 "use strict";
 
-const path = require("path");
 const fs = require("fs");
+const path = require("path");
 const { spawn } = require("child_process");
 
 const documentsDirectoryPath = process.argv[2];
@@ -10,6 +10,11 @@ const documentsDirectoryPath = process.argv[2];
 if (!documentsDirectoryPath) {
     console.log("❌ Invalid arguments.");
     console.error("Usage: node installAll.js <Documents Directory Path having Acts and Regulations>");
+    process.exit(1);
+}
+if(!process.env.DB_PATH) {
+    console.error("❌ Environment variable DB_PATH is not set.");
+    console.log("⚠️ Env file must be present the working directory with DB_PATH defined.");
     process.exit(1);
 }
 
@@ -51,8 +56,8 @@ async function main() {
     ensureDirExists(regulationsDir, "Regulations");
 
     try {
-        await runCommand("node", ["ingestAct.js", actsDir, "--all"]);
-        await runCommand("node", ["ingestRegulation.js", regulationsDir, "--all"]);
+        await runCommand("node", [path.join(__dirname, "./ingestAct.js"), actsDir, "--all"]);
+        await runCommand("node", [path.join(__dirname, "./ingestRegulation.js"), regulationsDir, "--all"]);
         console.log("\n✅ All documents ingested successfully");
     } catch (err) {
         console.error("\n❌ installAll failed:", err.message);

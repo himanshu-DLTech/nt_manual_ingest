@@ -4,7 +4,7 @@ const path = require("path");
 const sqlite3 = require("sqlite3");
 const { open } = require("sqlite"); // wrapper for async open()
 
-const DB_PATH = path.resolve("./newLaws.db");
+const DB_PATH = path.resolve(process.env.DB_PATH);
 
 let db = null;
 

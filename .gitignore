@@ -1,3 +1,4 @@
 *
 !*.js
 !/conf/thaiocr.json.example
+!/.env.example

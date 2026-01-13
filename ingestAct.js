@@ -3,7 +3,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const lawsStorage = require("./lawsStorageSimple.js");
+const lawsStorage = require(path.join(__dirname, "./lawsStorageSimple.js"));
 
 // ─────────────────────────────────────────────
 // Args
@@ -17,6 +17,11 @@ if (!inputDirPath) {
     console.error("Usage: node ingestAct.js <Act Directory Path>");
     console.error("--- OR ---");
     console.error("Usage: node ingestAct.js <masterDirPath having all Acts> --all");
+    process.exit(1);
+}
+if(!process.env.DB_PATH) {
+    console.error("❌ Environment variable DB_PATH is not set.");
+    console.log("⚠️ Env file must be present the working directory with DB_PATH defined.");
     process.exit(1);
 }
 

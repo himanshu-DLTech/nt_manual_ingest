@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 
 // adjust if your OCR library filename is different
-const { getContent } = require("./thaiOcrSimple.js");
+const { getContent } = require(path.join(__dirname, "./thaiOcrSimple.js"));
 
 /* --------------------------------------------------
    OCR a single PDF → TXT (same directory)
@@ -84,6 +84,7 @@ async function main() {
     const inputPath = process.argv[2];
 
     if (!inputPath) {
+        console.error("❌ Invalid arguments.");
         console.error("Usage:");
         console.error("  node ocr-cli.js /path/to/file.pdf");
         console.error("  node ocr-cli.js /path/to/directory");
